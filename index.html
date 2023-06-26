@@ -13,11 +13,28 @@
         <h1>The Gatorbase</h1>
     </header>
     <div>
-        <section class="list"></section>
+        <section class="list-items">
+            <ul id="list">
+                <li>
+                    <span>Ya Boi</span>
+                </li>
+            </ul>
+        </section>
         <section class="form">
             <form action="">
                 <fieldset>
-                    <legend>Leg</legend>
+                    <legend>New Gator</legend>
+                    <label for="name">Flavorade</label>
+                    <input type="text" name="name" id="name" required><br>
+                    <label for="price">GatorPrice</label>
+                    <input type="text" name="price" id="price" required><br>
+                    <label for="color">ColorAde</label>
+                    <input type="color" name="color" id="color"><br>
+                    <label for="flavor">GatorSize</label>
+                    <input type="text" name="size" id="size"><br>
+                    <label for="in-stock">In Stockorade</label>
+                    <input type="checkbox" name="in-stock" id="in-stock"><br>
+                    <input type="submit" value="Createorade some Gatorade"/>
                 </fieldset>
             </form>
         </section>
