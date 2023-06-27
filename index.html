@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
         <section class="list-items">
             <ul id="list">
                 <li>
-                    <span>Ya Boi</span>
+                    <span>Placeholder</span>
                 </li>
             </ul>
         </section>
@@ -31,7 +31,11 @@
                     <label for="color">ColorAde</label>
                     <input type="color" name="color" id="color"><br>
                     <label for="size">GatorSize</label>
-                    <input type="text" name="size" id="size" required><br>
+                    <select name="size" required>
+                        <option value="12">12 oz</option>
+                        <option value="16">16 oz</option>
+                        <option value="20">20 oz</option>
+                    </select><br>
                     <label for="in-stock">In Stockorade</label>
                     <input type="checkbox" name="in-stock" id="in-stock"><br>
                     <input type="submit" value="Createorade some Gatorade"/>
