@@ -7,7 +7,7 @@ form.addEventListener("submit", (e) => {
     let price = e.target.price.value
     let color = e.target.color.value
     let size = e.target.size.value
-    let inStock = e.target.size.value
+    let inStock = e.target.inStock.value
 
    
     createItem(name,price,color,size,inStock)
@@ -17,11 +17,27 @@ form.addEventListener("submit", (e) => {
 function itemTemplate(name, price, color, size, inStock) {
     let li = document.createElement("li")
 
-    // let nameObj = document.createElement()
-    // let priceObj
-    // let colorObj
-    // let sizeObj
-    // let inStockObj
+    let nameObj = document.createElement('strong')
+    let priceObj = document.createElement('strong')
+    let colorObj = document.createElement('strong')
+    let sizeObj = document.createElement('strong')
+    let inStockObj = document.createElement('strong')
+    
+    nameObj.innerText = name;
+    priceObj.innerText = `$${price}`;
+    colorObj.innerText = color;
+    colorObj.setAttribute("style", `color: ${color}`)
+    sizeObj.innerText = size;
+    inStockObj.innerText = inStock;
+
+
+    li.append(nameObj,document.createElement("br"))
+    li.append(priceObj,document.createElement("br"))
+    li.append(colorObj,document.createElement("br"))
+    li.append(sizeObj,document.createElement("br"))
+    li.append(inStockObj,document.createElement("br"))
+
+
 
     return li
 }
