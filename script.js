@@ -16,6 +16,14 @@ form.addEventListener("submit", (e) => {
 
 function itemTemplate(name, price, color, size, inStock) {
     let li = document.createElement("li")
+    let container = document.createElement("section")
+    let removeButton = document.createElement("button")
+    removeButton.innerText = "Deletorade This"
+
+    removeButton.addEventListener("click", (event) => {
+        li.remove()
+    })
+
 
     let nameObj = document.createElement('strong')
     let priceObj = document.createElement('strong')
@@ -24,20 +32,22 @@ function itemTemplate(name, price, color, size, inStock) {
     let inStockObj = document.createElement('strong')
     
     nameObj.innerText = name;
-    priceObj.innerText = `$${price}`;
+    priceObj.innerText = `$${price/100}`;
     colorObj.innerText = color;
-    colorObj.setAttribute("style", `color: ${color}`)
     sizeObj.innerText = size;
     inStockObj.innerText = inStock;
 
-
-    li.append(nameObj,document.createElement("br"))
-    li.append(priceObj,document.createElement("br"))
-    li.append(colorObj,document.createElement("br"))
-    li.append(sizeObj,document.createElement("br"))
-    li.append(inStockObj,document.createElement("br"))
+    container.setAttribute("style", `background-color: ${color}`)
 
 
+    li.append(container)
+
+    container.append(nameObj,document.createElement("br"))
+    container.append(priceObj,document.createElement("br"))
+    container.append(colorObj,document.createElement("br"))
+    container.append(sizeObj,document.createElement("br"))
+    container.append(inStockObj,document.createElement("br"))
+    container.append(removeButton)
 
     return li
 }
