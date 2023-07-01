@@ -58,3 +58,28 @@ function createItem(name, price, color, size, inStock){
 
     ul.append(li)
 }
+
+
+function addToggleHidden(name) {
+    let toggleList = document.getElementsByClassName(name)
+    for(element of toggleList){
+        element.addEventListener("click", (event) => {
+            let parent = event.target.parentElement
+            let form = parent.querySelector("form")
+            console.log(form)
+
+            if(form.style.display != "none") {
+                form.style.display = "none"
+            } else {
+                form.style.display = "block"
+            }
+        })
+    }
+}
+
+
+function showHide(element) {
+
+}
+ 
+addToggleHidden('hide')

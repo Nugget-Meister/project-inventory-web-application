@@ -2,7 +2,7 @@
 header {
     background-color: gray;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 20% 60% 20%;
   
 }
 
@@ -15,10 +15,8 @@ header h1 {
     padding: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;   
 }
-
 
 body {
     height: 100vh;
@@ -33,4 +31,32 @@ div {
 
 section {
     padding: 1%;
+}
+
+
+/* Stylized Elements */
+
+li {
+    transition: 200ms;
+    filter: grayscale(50%)
+}
+
+li:hover {
+    transition: 200ms;
+    filter: grayscale(0);
+}
+
+.hide {
+    background-color: #c1c1c1;
+    transition: 200ms;
+    float: right;
+    margin-right: 1%;
+    border: none;
+    width: 10vw;
+}
+
+.hide:hover {
+    transition: 200ms;
+    background-color: #8e8c8c
+
 }
