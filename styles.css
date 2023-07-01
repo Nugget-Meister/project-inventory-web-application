@@ -1,15 +1,24 @@
 
 header {
     background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  
 }
 
 header h1 {
+    grid-column: 2;
     font-family:  Helvetica, sans-serif;
-    margin-top: 0px;
+    margin: 0px;
     text-align: center;
     color: white;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
+
 
 body {
     height: 100vh;
