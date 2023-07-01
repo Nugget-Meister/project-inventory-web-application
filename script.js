@@ -32,7 +32,7 @@ function itemTemplate(name, price, color, size, inStock) {
     let inStockObj = document.createElement('strong')
     
     nameObj.innerText = name;
-    priceObj.innerText = `$${price/100}`;
+    priceObj.innerText = `$${(price/100).toFixed(2)}`;
     colorObj.innerText = color;
     sizeObj.innerText = size;
     inStockObj.innerText = inStock;
