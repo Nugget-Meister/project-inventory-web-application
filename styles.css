@@ -24,7 +24,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-rows: 15% 70% 10%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 div {
     display: grid;
@@ -49,6 +49,9 @@ legend, label {
     font-family: sans-serif
 }
 
+#leftButton {
+    float: left;
+}
 
 
 /* Responsive Element */

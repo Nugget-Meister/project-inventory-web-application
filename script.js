@@ -74,13 +74,13 @@ function addToggleHidden(name) {
 function showHide(host) {
     let parent = host.target.parentElement
     let form = parent.querySelector("form")
-    let fieldset = parent.children[2].children[0]
 
     if(form.getAttribute("class")) {
         form.toggleAttribute("class")
     } else {
         form.setAttribute('class', "toHide")
     }
+
     form.removeAttribute("style")
 
     form.addEventListener("animationend",() => {
@@ -94,23 +94,6 @@ function showHide(host) {
         }
     })
 
-    // form.addEventListener 
-    
-    // if(form.style.display != "none") {
-    //     form.setAttribute('class', "toHide")
-    //     form.style.display = "none"
-    //     host.target.innerText = '+'
-    // } else {
-    //     form.removeAttribute('class')
-    //     host.target.innerText = "-"
-    //     form.style.display = "none"
-    // }
-
-    console.log(fieldset)
-}
-
-function changeText(host, text) {
-    host.innerText
 }
  
 addToggleHidden('hide')
