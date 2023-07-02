@@ -20,7 +20,7 @@ function itemTemplate(name, price, color, size, inStock) {
     let removeButton = document.createElement("button")
     removeButton.innerText = "Deletorade This"
 
-    removeButton.addEventListener("click", (event) => {
+    removeButton.addEventListener("click", () => {
         li.remove()
     })
 
@@ -75,15 +75,38 @@ function showHide(host) {
     let parent = host.target.parentElement
     let form = parent.querySelector("form")
     let fieldset = parent.children[2].children[0]
-    console.log(fieldset)
 
-    if(form.style.display != "none") {
-        form.style.display = "none"
-        host.target.innerText = '+'
+    if(form.getAttribute("class")) {
+        form.toggleAttribute("class")
     } else {
-        form.style.display = "block"
-        host.target.innerText = "-"
+        form.setAttribute('class', "toHide")
     }
+    form.removeAttribute("style")
+
+    form.addEventListener("animationend",() => {
+        console.log(form.style.display)
+        if(form.style.display == "none") {
+            console.log('yeah')
+            form.style.display = "block"
+        }else {
+            console.log("no")
+            form.style.display = "none"
+        }
+    })
+
+    // form.addEventListener 
+    
+    // if(form.style.display != "none") {
+    //     form.setAttribute('class', "toHide")
+    //     form.style.display = "none"
+    //     host.target.innerText = '+'
+    // } else {
+    //     form.removeAttribute('class')
+    //     host.target.innerText = "-"
+    //     form.style.display = "none"
+    // }
+
+    console.log(fieldset)
 }
 
 function changeText(host, text) {

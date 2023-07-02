@@ -17,7 +17,6 @@ header h1 {
     justify-content: center;
     align-items: center;   
     position: relative;
-    
 }
 
 body {
@@ -25,7 +24,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-rows: 15% 70% 10%;
-    overflow: hidden; /* check for better methods later*/
+    /* overflow: hidden; */
 }
 div {
     display: grid;
@@ -41,6 +40,13 @@ ul {
     list-style: none;
     padding-left: 0;
     font-family: sans-serif;
+}
+
+fieldset {
+    border:0
+}
+legend, label {
+    font-family: sans-serif
 }
 
 
@@ -59,13 +65,13 @@ li {
     transition: 200ms;
     filter: grayscale(50%);
     position: relative;
-    
+    left: 0px;
 }
 
 li:hover {
     transition: 200ms;
     filter: grayscale(0);
-    left: 20px
+    left: 1%
 }
 
 .hide {
@@ -92,11 +98,18 @@ h1 {
    animation-direction: alternate;
 }
 
-fieldset {
+form {
     position: relative;
     animation-name: fromRight;
     animation-duration: 1s; 
-    animation-direction: alternate;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+form.toHide {
+    animation-name: toRight;
+    animation-duration: 1s; 
+    animation-direction: normal;
     animation-fill-mode: forwards;
 }
 
@@ -114,10 +127,10 @@ fieldset {
 }
 
 @keyframes fromRight {
-    0% {left: 100vw;display: block;}
-    100% {left: 0vw;display: block;}
+    0% {left: 100vw}
+    100% {left: 0vw}
 }
 @keyframes toRight {
-    0% {left: 0vw;}
-    100% {left: 100vw; display:none}
+    from {left: 0vw}
+    to {left: 100vw}
 }
