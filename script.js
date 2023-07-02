@@ -56,6 +56,8 @@ function createItem(name, price, color, size, inStock){
     const ul = document.querySelector("ul");
     const li = itemTemplate(name,price,color,size,inStock)
 
+    console.log(ul.children)
+
     ul.append(li)
 }
 
@@ -66,7 +68,7 @@ function addToggleHidden(name) {
         element.addEventListener("click", (event) => {
             let parent = event.target.parentElement
             let form = parent.querySelector("form")
-            console.log(form)
+            // console.log(form)
 
             if(form.style.display != "none") {
                 form.style.display = "none"

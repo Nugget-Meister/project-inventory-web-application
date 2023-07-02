@@ -3,7 +3,7 @@ header {
     background-color: gray;
     display: grid;
     grid-template-columns: 20% 60% 20%;
-  
+    
 }
 
 header h1 {
@@ -16,6 +16,8 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;   
+    position: relative;
+    
 }
 
 body {
@@ -23,6 +25,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-rows: 15% 70% 10%;
+    
 }
 div {
     display: grid;
@@ -31,8 +34,27 @@ div {
 
 section {
     padding: 1%;
+    
 }
 
+ul {   
+    list-style: none;
+    padding-left: 0;
+    font-family: sans-serif;
+}
+
+form {
+    font-family: Helvetica, sans-serif;
+    
+}
+
+/* Responsive Element */
+
+@media (max-width: 400px){
+    div {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* Stylized Elements */
 
@@ -53,10 +75,30 @@ li:hover {
     margin-right: 1%;
     border: none;
     width: 10vw;
+    
 }
 
 .hide:hover {
     transition: 200ms;
-    background-color: #8e8c8c
+    background-color: #8e8c8c;
+}
 
+/* Applied animations */
+h1 {
+   animation-name: fromLeft;
+   animation-duration: 1s; 
+   animation-direction: alternate;
+}
+
+
+/* Animations */
+
+@keyframes fromLeft {
+    from {right: 100vw;}
+    to {right: 0vw;}
+}
+
+@keyframes fromRight {
+    from {left: 100vw;}
+    to {left: 0vw}
 }
