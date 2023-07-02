@@ -54,10 +54,15 @@ function itemTemplate(name, price, color, size, inStock) {
 function createItem(name, price, color, size, inStock){
     const ul = document.querySelector("ul");
     const li = itemTemplate(name,price,color,size,inStock)
-
+    
     // console.log(ul.children)
-
+    
     ul.append(li)
+
+    for(child of ul.children){
+        console.log(child.children[0].children[0])
+    }
+
 }
 
 
