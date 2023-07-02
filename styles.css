@@ -10,8 +10,17 @@ footer {
     background-color: #c1c1c1;
     display: inline-flex;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
 }
+
+#smallScreen {
+    display: none;
+}
+
+#bigScreen {
+    display: block;
+}
+
 
 header h1 {
     grid-column: 2;
@@ -47,24 +56,33 @@ div {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-bottom: 1%;
-    /* padding-top: 1%; */
 }
 
 /* Right Side CSS */
 fieldset {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1px;
 }
 
-input {
+.formButton {
+    transition: 200ms;
     position: relative;
-    grid-row: 1;
+    border: 0;
+    background-color: #c1c1c1;
+    padding: 1%;
+    margin-top: 2%;
 }
+
+.formButton:hover{
+    transition: 200ms;
+    background-color: #8e8c8c;
+}
+
+
+
 select {
     position: relative;
-    grid-row: 2;
 }
-
 
 /* Left side CSS */
 .list-items {
@@ -90,10 +108,45 @@ legend, label {
     float: left;
 }
 
+li {
+    padding: 3%;
+    transition: 200ms;
+    filter: grayscale(50%);
+    position: relative;
+    left: 0%;
+}
+
+li:hover {
+    transition: 200ms;
+    filter: grayscale(30%);
+    left: 1%
+}
+
+li button {
+    border: none;
+    background-color: #c1c1c1;
+    width: 100%;
+    padding: 1%;
+    margin:1%
+}
+
+li button:hover {
+    background-color: #8e8c8c;
+}
+
+
 
 /* Responsive Element */
 
 @media (max-width: 500px){
+    #smallScreen {
+        display: block;
+    }
+
+    #bigScreen {
+        display: none;
+    }
+
     header {
         grid-template-columns: 5% 90% 5%;
     }
@@ -130,31 +183,6 @@ legend, label {
 
 /* Animated/Transition Elements */
 
-li {
-    padding: 3%;
-    transition: 200ms;
-    filter: grayscale(50%);
-    position: relative;
-    left: 0%;
-}
-
-li:hover {
-    transition: 200ms;
-    filter: grayscale(30%);
-    left: 1%
-}
-
-li button {
-    border: none;
-    background-color: #c1c1c1;
-    width: 100%;
-    padding: 1%;
-    margin:1%
-}
-
-li button:hover {
-    background-color: #8e8c8c;
-}
 
 .hide {
     background-color: #c1c1c1;

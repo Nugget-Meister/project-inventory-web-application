@@ -63,16 +63,11 @@ function itemTemplate(name, price, color, size, inStock) {
 function createItem(name, price, color, size, inStock){
     const ul = document.querySelector("ul");
     const li = itemTemplate(name,price,color,size,inStock)
-    
-    // console.log(ul.children)
-    
-    
 
     for(child of ul.children){
         let childText = child.children[0].children[0].innerText
-        console.log(childText)
         if(childText == name){
-            // console.log(true)
+            messageBox()
             child.remove()
         }
     }
@@ -123,6 +118,15 @@ function showHide(host) {
 
     
 
+}
+
+
+function messageBox() {
+    let section = document.getElementsByClassName('form')[0]
+    let newMessage = document.createElement("section")
+    newMessage.innerText = "naboo"
+
+    console.log(section)
 }
  
 addToggleHidden('hide')
