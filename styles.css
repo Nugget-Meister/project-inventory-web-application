@@ -111,11 +111,15 @@ form {
 
 form.toHide {
     animation-name: toRight;
+}
+
+ul, li{
+    position: relative;
+    animation-name: fromLeft;
     animation-duration: 1s; 
     animation-direction: normal;
     animation-fill-mode: forwards;
 }
-
 
 /* Animations */
 

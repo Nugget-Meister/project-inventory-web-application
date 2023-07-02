@@ -1,6 +1,6 @@
-const form = document.querySelector("form")
+const target = document.querySelector("form")
 
-form.addEventListener("submit", (e) => {
+target.addEventListener("submit", (e) => {
     e.preventDefault();
 
     let name = e.target.name.value
@@ -55,7 +55,7 @@ function createItem(name, price, color, size, inStock){
     const ul = document.querySelector("ul");
     const li = itemTemplate(name,price,color,size,inStock)
 
-    console.log(ul.children)
+    // console.log(ul.children)
 
     ul.append(li)
 }
@@ -73,26 +73,36 @@ function addToggleHidden(name) {
 
 function showHide(host) {
     let parent = host.target.parentElement
-    let form = parent.querySelector("form")
+    let target = parent.children[2]
 
-    if(form.getAttribute("class")) {
-        form.toggleAttribute("class")
+    if(target.getAttribute("class") || target.style.display){
+        console.log(true)
     } else {
-        form.setAttribute('class', "toHide")
+        console.log(false)
+        target.addEventListener("animationend",() => {
+            if(!target.getAttribute("class")) {
+                console.log(`set ${target}to block`)
+                target.style.display = "block"
+            }else {
+                console.log(`set ${target}to none`)
+                target.style.display = "none"
+            }
+        })
+    }
+    
+    if(target.getAttribute("class")) {
+        target.toggleAttribute("class")
+        target.style.display = "block"
+    } else {
+        target.setAttribute('class', "toHide")
     }
 
-    form.removeAttribute("style")
+    // target.removeAttribute("style")
+    
 
-    form.addEventListener("animationend",() => {
-        console.log(form.style.display)
-        if(form.style.display == "none") {
-            console.log('yeah')
-            form.style.display = "block"
-        }else {
-            console.log("no")
-            form.style.display = "none"
-        }
-    })
+
+
+    
 
 }
  
