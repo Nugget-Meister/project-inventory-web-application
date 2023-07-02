@@ -35,7 +35,7 @@ function itemTemplate(name, price, color, size, inStock) {
     priceObj.innerText = `$${(price/100).toFixed(2)}`;
     colorObj.innerText = color;
     sizeObj.innerText = size;
-    inStockObj.innerText = inStock;
+    inStockObj.innerText = inStock == "yes" ? "In Stock": "Out of Stock";
 
     li.setAttribute("style", `background-color: ${color}`)
 
