@@ -17,25 +17,34 @@ target.addEventListener("submit", (e) => {
 function itemTemplate(name, price, color, size, inStock) {
     let li = document.createElement("li")
     let container = document.createElement("section")
+    
+
+    // Button variables and text
     let removeButton = document.createElement("button")
     removeButton.innerText = "Deletorade This"
-
     removeButton.addEventListener("click", () => {
         li.remove()
     })
 
-
+    // Created Elements
     let nameObj = document.createElement('strong')
     let priceObj = document.createElement('strong')
     let colorObj = document.createElement('strong')
     let sizeObj = document.createElement('strong')
     let inStockObj = document.createElement('strong')
     
+    // Set text for all elements
     nameObj.innerText = name;
     priceObj.innerText = `$${(price/100).toFixed(2)}`;
     colorObj.innerText = color;
     sizeObj.innerText = size;
     inStockObj.innerText = inStock == "yes" ? "In Stock": "Out of Stock";
+    
+    //Set classes for added elements for show/hide
+    priceObj.setAttribute("class", "details")
+    colorObj.setAttribute("class", "details")
+    sizeObj.setAttribute("class", "details")
+    inStockObj.setAttribute("class", "details")
 
     li.setAttribute("style", `background-color: ${color}`)
 
@@ -57,12 +66,17 @@ function createItem(name, price, color, size, inStock){
     
     // console.log(ul.children)
     
-    ul.append(li)
+    
 
     for(child of ul.children){
-        console.log(child.children[0].children[0])
+        let childText = child.children[0].children[0].innerText
+        console.log(childText)
+        if(childText == name){
+            // console.log(true)
+            child.remove()
+        }
     }
-
+    ul.append(li)
 }
 
 
