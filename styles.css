@@ -121,6 +121,10 @@ ul, li{
     animation-fill-mode: forwards;
 }
 
+ul.toHide {
+    animation-name: toLeft;
+}
+
 /* Animations */
 
 @keyframes fromLeft {
@@ -128,9 +132,9 @@ ul, li{
     to {right: 0vw;}
 }
 
-@keyframes fromLeft {
-    from {right: 100vw;}
-    to {right: 0vw;}
+@keyframes toLeft {
+    from {right: 0vw;}
+    to {right: 100vw;}
 }
 
 @keyframes fromRight {
