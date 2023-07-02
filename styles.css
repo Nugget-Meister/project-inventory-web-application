@@ -43,10 +43,7 @@ ul {
     font-family: sans-serif;
 }
 
-form {
-    font-family: Helvetica, sans-serif;
-    
-}
+
 
 /* Responsive Element */
 
@@ -60,12 +57,15 @@ form {
 
 li {
     transition: 200ms;
-    filter: grayscale(50%)
+    filter: grayscale(50%);
+    position: relative;
+    
 }
 
 li:hover {
     transition: 200ms;
     filter: grayscale(0);
+    left: 20px
 }
 
 .hide {
@@ -74,13 +74,15 @@ li:hover {
     float: right;
     margin-right: 1%;
     border: none;
-    width: 10vw;
+    width: 20px
     
 }
 
 .hide:hover {
     transition: 200ms;
     background-color: #8e8c8c;
+    width: 20vw;
+   
 }
 
 /* Applied animations */
@@ -88,6 +90,14 @@ h1 {
    animation-name: fromLeft;
    animation-duration: 1s; 
    animation-direction: alternate;
+}
+
+fieldset {
+    position: relative;
+    animation-name: toRight;
+    animation-duration: 1s; 
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
 }
 
 
@@ -98,7 +108,16 @@ h1 {
     to {right: 0vw;}
 }
 
+@keyframes fromLeft {
+    from {right: 100vw;}
+    to {right: 0vw;}
+}
+
 @keyframes fromRight {
-    from {left: 100vw;}
-    to {left: 0vw}
+    0% {left: 100vw;display: block;}
+    100% {left: 0vw;display: block;}
+}
+@keyframes toRight {
+    0% {left: 0vw;}
+    100% {left: 100vw; display:none}
 }

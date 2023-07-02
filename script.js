@@ -39,7 +39,6 @@ function itemTemplate(name, price, color, size, inStock) {
 
     container.setAttribute("style", `background-color: ${color}`)
 
-
     li.append(container)
 
     container.append(nameObj,document.createElement("br"))
@@ -66,22 +65,28 @@ function addToggleHidden(name) {
     let toggleList = document.getElementsByClassName(name)
     for(element of toggleList){
         element.addEventListener("click", (event) => {
-            let parent = event.target.parentElement
-            let form = parent.querySelector("form")
-            // console.log(form)
-
-            if(form.style.display != "none") {
-                form.style.display = "none"
-            } else {
-                form.style.display = "block"
-            }
+            showHide(event)
         })
     }
 }
 
 
-function showHide(element) {
+function showHide(host) {
+    let parent = host.target.parentElement
+    let form = parent.querySelector("form")
+    console.log(host.target)
 
+    if(form.style.display != "none") {
+        // form.style.display = "none"
+        host.target.innerText = '+'
+    } else {
+        // form.style.display = "block"
+        host.target.innerText = "-"
+    }
+}
+
+function changeText(host, text) {
+    host.innerText
 }
  
 addToggleHidden('hide')
