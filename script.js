@@ -89,16 +89,21 @@ function showHide(host) {
     let parent = host.target.parentElement
     let target = parent.children[2]
 
-    if(target.getAttribute("class") || target.style.display){
-        console.log(true)
+    console.log(host.target)
+    if(host.target.innerText== '-'){
+        host.target.innerText = '+'
     } else {
-        console.log(false)
+        host.target.innerText = "-"
+    }
+
+    if(target.getAttribute("class") || target.style.display){
+    } else {
         target.addEventListener("animationend",() => {
             if(!target.getAttribute("class")) {
-                console.log(`set ${target}to block`)
+                // console.log(`set ${target}to block`)
                 target.style.display = "block"
             }else {
-                console.log(`set ${target}to none`)
+                // console.log(`set ${target}to none`)
                 target.style.display = "none"
             }
         })
@@ -142,7 +147,8 @@ function messageBox(name) {
         newMessage.addEventListener("animationend", () => {
             newMessage.remove()
         })
-        newMessage.classList.add("toAnimate","toRight")
+        newMessage.classList.toggle("fromRight")
+        newMessage.classList.toggle("toRight")
     })
 }
  
