@@ -50,7 +50,23 @@ div {
     /* padding-top: 1%; */
 }
 
+/* Right Side CSS */
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
+input {
+    position: relative;
+    grid-row: 1;
+}
+select {
+    position: relative;
+    grid-row: 2;
+}
+
+
+/* Left side CSS */
 .list-items {
     padding-right: 1px; 
     overflow: auto;
@@ -112,24 +128,28 @@ legend, label {
     }
 }
 
-/* Stylized Elements */
+/* Animated/Transition Elements */
 
 li {
+    padding: 3%;
     transition: 200ms;
     filter: grayscale(50%);
     position: relative;
-    left: 0px;
+    left: 0%;
 }
 
 li:hover {
     transition: 200ms;
-    filter: grayscale(0);
+    filter: grayscale(30%);
     left: 1%
 }
 
 li button {
     border: none;
     background-color: #c1c1c1;
+    width: 100%;
+    padding: 1%;
+    margin:1%
 }
 
 li button:hover {
