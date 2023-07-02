@@ -74,13 +74,14 @@ function addToggleHidden(name) {
 function showHide(host) {
     let parent = host.target.parentElement
     let form = parent.querySelector("form")
-    console.log(host.target)
+    let fieldset = parent.children[2].children[0]
+    console.log(fieldset)
 
     if(form.style.display != "none") {
-        // form.style.display = "none"
+        form.style.display = "none"
         host.target.innerText = '+'
     } else {
-        // form.style.display = "block"
+        form.style.display = "block"
         host.target.innerText = "-"
     }
 }

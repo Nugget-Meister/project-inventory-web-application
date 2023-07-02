@@ -25,7 +25,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-rows: 15% 70% 10%;
-    
+    overflow: hidden; /* check for better methods later*/
 }
 div {
     display: grid;
@@ -94,7 +94,7 @@ h1 {
 
 fieldset {
     position: relative;
-    animation-name: toRight;
+    animation-name: fromRight;
     animation-duration: 1s; 
     animation-direction: alternate;
     animation-fill-mode: forwards;
