@@ -11,6 +11,7 @@ target.addEventListener("submit", (e) => {
 
    
     createItem(name,price,color,size,inStock)
+    target.reset()
 })
 
 
