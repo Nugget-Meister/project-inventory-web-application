@@ -67,7 +67,7 @@ function createItem(name, price, color, size, inStock){
     for(child of ul.children){
         let childText = child.children[0].children[0].innerText
         if(childText == name){
-            messageBox()
+            messageBox(name)
             child.remove()
         }
     }
@@ -121,12 +121,29 @@ function showHide(host) {
 }
 
 
-function messageBox() {
+function messageBox(name) {
     let section = document.getElementsByClassName('form')[0]
     let newMessage = document.createElement("section")
-    newMessage.innerText = "naboo"
+    let prevMessage = document.getElementById("messageBox")
 
+    newMessage.setAttribute("id", "messageBox")
+    newMessage.innerText = `Modified ${name} with new info. Click on me to dismiss!`
+
+    if(prevMessage) {
+       prevMessage.remove()
+    } 
+
+    newMessage.classList.add("toAnimate","fromRight")
+    
+    section.append(newMessage)
     console.log(section)
+
+    newMessage.addEventListener("click", () => {
+        newMessage.addEventListener("animationend", () => {
+            newMessage.remove()
+        })
+        newMessage.classList.add("toAnimate","toRight")
+    })
 }
  
 addToggleHidden('hide')

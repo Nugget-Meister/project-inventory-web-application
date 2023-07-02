@@ -69,8 +69,8 @@ fieldset {
     position: relative;
     border: 0;
     background-color: #c1c1c1;
-    padding: 1%;
-    margin-top: 2%;
+    padding: 3%;
+    bottom: -10px;
 }
 
 .formButton:hover{
@@ -78,10 +78,9 @@ fieldset {
     background-color: #8e8c8c;
 }
 
-
-
-select {
-    position: relative;
+#messageBox {
+    padding-left: 5%;
+    background-color: orange;
 }
 
 /* Left side CSS */
@@ -133,7 +132,6 @@ li button {
 li button:hover {
     background-color: #8e8c8c;
 }
-
 
 
 /* Responsive Element */
@@ -203,9 +201,9 @@ li button:hover {
 
 /* Applied animations */
 h1 {
-   animation-name: fromLeft;
+   /* animation-name: fromLeft;
    animation-duration: 1s; 
-   animation-direction: alternate;
+   animation-direction: alternate; */
 }
 
 form {
@@ -230,6 +228,29 @@ ul, li{
 
 ul.toHide {
     animation-name: toLeft;
+}
+
+/* Toggleable Class names for animation. Can clean up later */
+.toAnimate {
+    position: relative;
+    animation-duration: 1s; 
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+.toLeft {
+    animation-name: toLeft;
+}
+
+.toRight {
+    animation-name: toRight;
+}
+
+.fromLeft {
+    animation-name: fromLeft;
+}
+
+.fromRight {
+    animation-name: fromRight;
 }
 
 /* Animations */
