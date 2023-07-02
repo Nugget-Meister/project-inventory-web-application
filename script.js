@@ -132,7 +132,7 @@ function messageBox(name) {
     let prevMessage = document.getElementById("messageBox")
 
     newMessage.setAttribute("id", "messageBox")
-    newMessage.innerText = `Modified ${name} with new info. Click on me to dismiss!`
+    newMessage.innerText = `Modified ${name} with input information. Click on me to dismiss!`
 
     if(prevMessage) {
        prevMessage.remove()
