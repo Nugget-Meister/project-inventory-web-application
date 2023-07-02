@@ -56,9 +56,35 @@ legend, label {
 
 /* Responsive Element */
 
-@media (max-width: 400px){
+@media (max-width: 500px){
     div {
         grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+    }
+    .list-items {
+        grid-row: 0;
+    }
+    .form {
+        grid-row: 1;
+    }
+
+    section {
+        padding: 0px
+    }
+
+    li{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    li button {
+        grid-column: 2;
+
+    }
+    li section {
+        grid-column: 1;
+        padding: 10px 10px 10px 10px
+        
     }
 }
 

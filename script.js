@@ -37,7 +37,7 @@ function itemTemplate(name, price, color, size, inStock) {
     sizeObj.innerText = size;
     inStockObj.innerText = inStock;
 
-    container.setAttribute("style", `background-color: ${color}`)
+    li.setAttribute("style", `background-color: ${color}`)
 
     li.append(container)
 
@@ -46,7 +46,7 @@ function itemTemplate(name, price, color, size, inStock) {
     container.append(colorObj,document.createElement("br"))
     container.append(sizeObj,document.createElement("br"))
     container.append(inStockObj,document.createElement("br"))
-    container.append(removeButton)
+    li.append(removeButton)
 
     return li
 }
